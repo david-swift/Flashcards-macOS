@@ -26,13 +26,13 @@ struct FlashcardsToolbar: CustomizableToolbarContent {
             }
         }
         ToolbarItem(id: "status") {
-            Button((viewModel.play ? viewModel.set?.phase : .init(
+            Button(((viewModel.play ? viewModel.set?.phase : .init(
                 "Edit Mode",
                 comment: "FlashcardsToolbar (Edit mode)"
             )) ?? .init(
                 "No Selection",
                 comment: "FlashcardsToolbar (No selection)"
-            )) {
+            )).localized) {
                 viewModel.showPhase.toggle()
             }
         }
